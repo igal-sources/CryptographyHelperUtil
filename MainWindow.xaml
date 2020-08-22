@@ -1,0 +1,69 @@
+﻿<Window x:Class="CryptographyHelperUtil.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CryptographyHelperUtil"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="1000">
+    <Grid Margin="10,20,10,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="*"
+                            x:Name="ValueColumn" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBox Grid.Row="1" Grid.Column="2"
+                 Text="{Binding FilePath, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}" FontFamily="Segoe WP Semibold" />
+        <Button Grid.Row="1" Grid.Column="0" Width="100" HorizontalAlignment="Left"
+                Content="Browse..."
+                Command="{Binding OpenFileDialogCommand}" FontFamily="Segoe WP Semibold" FontSize="14" />
+
+        <Button Grid.Row="5" Grid.Column="0" Width="100"
+                Content="Encrypt" Command="{Binding EncryptCommand}" FontFamily="Segoe WP Semibold" FontSize="14" />
+        
+        <Button Grid.Row="5" Grid.Column="2" HorizontalAlignment="Left" Width="100"
+                Content="Decrypt" Command="{Binding DecryptCommand}" FontFamily="Segoe WP Semibold" FontSize="14" />
+
+        <TextBlock Grid.Row="9" Grid.Column="0" 
+                   Text="Decrypted: " HorizontalAlignment="Center" FontSize="16" FontFamily="Segoe WP Semibold"/>
+        <TextBox Grid.Row="9" Grid.Column="2" 
+                 Text="{Binding DecryptedText, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}" FontFamily="Segoe WP Semibold" />
+
+        <Button Grid.Row="13" Grid.Column="0" Width="100"
+                Content="Decrypt Text" Command="{Binding DecryptTextCommand}" FontFamily="Segoe WP Semibold" FontSize="14" />
+
+        <TextBox Grid.Row="13" Grid.Column="2" 
+                 Text="{Binding DecryptedSingleText, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}" FontFamily="Segoe WP Semibold" />
+
+        <Button Grid.Row="17" Grid.Column="0" Width="100"
+                Content="Encrypt Text" Command="{Binding EncryptTextCommand}" FontFamily="Segoe WP Semibold" FontSize="14" />
+
+        <TextBox Grid.Row="17" Grid.Column="2" 
+                 Text="{Binding EncryptSingleText, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}" FontFamily="Segoe WP Semibold" />
+
+    </Grid>
+</Window>
